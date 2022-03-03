@@ -37,11 +37,11 @@
                  (function-item pop-to-buffer)
                  function))
 
-(defcustom elfeed-show-entry-delete #'elfeed-kill-buffer
+(defcustom elfeed-show-entry-delete #'kill-buffer
   "Function called when quitting from the elfeed-entry buffer.
 Called without arguments."
   :group 'elfeed
-  :type '(choice (function-item elfeed-kill-buffer)
+  :type '(choice (function-item kill-buffer)
                  (function-item delete-window)
                  function))
 
@@ -54,7 +54,7 @@ Called without arguments."
       (suppress-keymap map)
       (define-key map "h" #'describe-mode)
       (define-key map "d" #'elfeed-show-save-enclosure)
-      (define-key map "q" #'elfeed-kill-buffer)
+      (define-key map "q" #'kill-buffer)
       (define-key map "g" #'elfeed-show-refresh)
       (define-key map "n" #'elfeed-show-next)
       (define-key map "p" #'elfeed-show-prev)
@@ -238,7 +238,7 @@ The result depends on the value of `elfeed-show-unique-buffers'."
 (defun elfeed-show-new-live-search ()
   "Kill the current buffer, search again in *elfeed-search*."
   (interactive)
-  (elfeed-kill-buffer)
+  (kill-buffer)
   (elfeed)
   (elfeed-search-live-filter))
 

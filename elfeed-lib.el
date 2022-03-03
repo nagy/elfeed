@@ -25,11 +25,6 @@
   (goto-char (point-min))
   (forward-line (1- n)))
 
-(defun elfeed-kill-buffer ()
-  "Kill the current buffer."
-  (interactive)
-  (kill-buffer (current-buffer)))
-
 (defun elfeed-kill-line ()
   "Clear out the current line without touching anything else."
   (beginning-of-line)
